@@ -58,11 +58,12 @@ footer{
     <div class="box">
 <a href="login.php"> <button>Admin Login</button></a>
 <a href="rules.php"> <button>Result Search</button></a>
-</center>
+
 </div>
 
         <footer>
             <p style="text-align: center;padding-top: 1%;"><b>This project is made by Rahul Biswas.CopyRights &#169; 2020</b> </p>
         </footer>
+       </center>
 </body>
 </html> 
