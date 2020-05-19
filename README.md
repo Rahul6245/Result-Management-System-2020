@@ -1,4 +1,4 @@
-# addmission
+# Result-Management-System-2020
 1.Save the file in xampp server.The file  name is addmission.
 2.Upload the sql file in phpmyadmin local server.
 3.Search localhost/addmission/home.php
