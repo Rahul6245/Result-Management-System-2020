@@ -49,7 +49,29 @@ session_start()
   background-color: darkcyan;
   color: white;
 }
-        
+input[type=text] {
+  width: 40%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+}
+input[type = "submit"]{
+  border:0;
+  background: none;
+  display: block;
+  margin: 20px auto;
+  text-align: center;
+  border: 2px solid darkcyan;
+  padding: 14px 40px;
+  outline: none;
+  color: black;
+  border-radius: 24px;
+  transition: 0.25s;
+  cursor: pointer;
+}
+input[type = "submit"]:hover{
+  background: darkcyan;
+}
 footer{
     margin-top: 100px;
 }
@@ -59,13 +81,14 @@ footer{
     <nav>
     <header class="nav1">
 <h2 style="float: left;">ST Plaza School</h2>
-<a class="btn" href="logoutstu.php"><button>Home Page</button></a>
+<a class="btn" href="#"><button onclick="window.print()">Download</button></a>
     </header>
 </nav>
 <center>
 
 <form action="" method="POST">
-    <input type="text" name="reg" style="text-align:center" value="<?php echo $_SESSION['reg'] ?>"/><br>
+    <input type="text" name="reg" style="text-align:center" placeholder="Enter The Registration No"><br>
+    <input type="text" name="name" style="text-align:center"  placeholder="Enter The Name"><br>
     <input type="submit" name="search" value="View Result">
     </form>
 <?php
@@ -77,7 +100,8 @@ $db = mysqli_select_db($connection,'admit1');
 if(isset($_POST['search'])){
 
     $reg = $_POST['reg'];
-$query="SELECT * FROM student where reg='$reg'";
+    $name = $_POST['name'];
+$query="SELECT * FROM student where reg='$reg' and name='$name' ";
 
 $query_run = mysqli_query($connection,$query);
 
@@ -101,10 +125,6 @@ while($row = mysqli_fetch_array($query_run))
 <tr>
     <th>Status:</th>
     <td style="color: red"><?php echo $row['status'] ?></td>
-  </tr>
-  <tr>
-    <th></th>
-    <td><button onclick="window.print()">Download</button></td>
   </tr>
 </table>
 </center>
